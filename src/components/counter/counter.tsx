@@ -9,8 +9,8 @@ function BeforeStartingDate() {
   return (
     <div>
       <h2 className="before">
-        Você chegou cedo demais. Faltam <span>{countedDays * -1} </span>dias
-        para começarmos a contar.
+        Você chegou cedo demais. Falta(m) <span>{countedDays * -1 + 1} </span>
+        dia(s) para começarmos a contar.
       </h2>
     </div>
   );

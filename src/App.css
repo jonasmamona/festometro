@@ -1,3 +1,8 @@
+/* @font-face {
+  font-family: Impact;
+  src: url(./fonts/impact.ttf);
+} */
+
 body {
   background-color: blanchedalmond;
   display: flex;
@@ -10,7 +15,7 @@ h1 {
   background: linear-gradient(to right, red, yellow, green, blue, purple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: "impact", cursive;
+  font-family: "impact";
   text-align: center;
   font-size: 3rem;
 }
