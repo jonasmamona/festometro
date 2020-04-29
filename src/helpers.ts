@@ -1,7 +1,4 @@
 export function datediff(date1: Date, date2: Date) {
-  console.log("data 1 " + date1);
-  console.log("data 2 " + date2);
-
   let result = Math.round((date2.valueOf() - date1.valueOf()) / 86400000);
 
   if (isNaN(result)) {
