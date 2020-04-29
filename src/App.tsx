@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     const getBahiaDateTime = () => {
       axios(
-        "http://worldtimeapi.org/api/timezone/America/Bahia/"
+        "https://worldtimeapi.org/api/timezone/America/Bahia/"
       ).then((result) =>
         setCountedDays(datediff(startingDate, new Date(result?.data?.datetime)))
       );
@@ -44,6 +44,7 @@ function App() {
 
   return (
     <div>
+      <h1>FESTÔMETRO</h1>
       <Confetti />
       {countedDays && <Counter countedDays={countedDays} />}
       {/* <Knapsack products={products} /> */}
