@@ -46,7 +46,7 @@ function App() {
     <div>
       <Confetti />
       <Counter countedDays={countedDays} />
-      <Knapsack products={products} />
+      {/* <Knapsack products={products} /> */}
     </div>
   );
 }
