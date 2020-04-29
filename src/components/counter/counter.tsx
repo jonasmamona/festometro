@@ -32,7 +32,7 @@ function CountingHasStarted(props: ICounterProps) {
 
 export default function Counter(props: ICounterProps) {
   return (
-    <div>
+    <div className="fade-in">
       <h1>FESTÔMETRO</h1>
       {props.countedDays < 0 ? (
         <BeforeStartingDate countedDays={props.countedDays} />
