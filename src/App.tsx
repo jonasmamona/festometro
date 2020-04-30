@@ -49,7 +49,6 @@ function App() {
       {countedDays !== null && countedDays >= 0 ? (
         <Knapsack
           products={products.filter((element) => {
-            console.log(element);
             return element.price <= (countedDays + 1) * 16;
           })}
           totalMoney={(countedDays + 1) * 16}

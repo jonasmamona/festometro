@@ -3,7 +3,6 @@ export function datediff(date1: Date, date2: Date) {
   let result = Math.round(
     (date2.valueOf() - date1.valueOf()) / millisecondsInADay
   );
-  console.log(result);
 
   if (isNaN(result)) {
     return 0;
