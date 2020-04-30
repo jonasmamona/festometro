@@ -4,6 +4,12 @@ import Counter from "../src/components/counter/counter";
 import Confetti from "./components/confetti/confetti";
 import Knapsack from "./components/knapsack/knapsack";
 import { datediff } from "./helpers";
+import { make as Richard } from "./reason/page/Richard/Richard.bs";
+import useSound from "use-sound";
+//@ts-ignore
+import visimta from "./audio/visimta.mp3";
+//@ts-ignore
+import IconBulb from "@bit/riffle-labs.zero.icon-bulb";
 import axios from "axios";
 import { products } from "./data/products";
 
@@ -11,6 +17,19 @@ const startingDate: Date = new Date("2020-05-01T00:00:01.000000-03:00");
 
 function App() {
   const [countedDays, setCountedDays] = useState<number | null>(null);
+  let [lightsOff, setLights] = useState<null | boolean>(false);
+  let [play, { stop }] = useSound(visimta);
+
+  let toggleLights = () => {
+    if (lightsOff) {
+      stop();
+      setLights((_) => false);
+    } else {
+      play();
+      setLights((_) => true);
+    }
+  };
+
   useEffect(() => {
     const getBahiaDateTime = () => {
       axios(
@@ -30,6 +49,12 @@ function App() {
       {countedDays && (
         <Knapsack products={products} totalMoney={(countedDays + 1) * 16} />
       )}
+      <IconBulb
+        size={40}
+        onClick={toggleLights}
+        className={`bulb${lightsOff ? " bulb-light" : ""}`}
+      />
+      {lightsOff && <Richard />}
     </div>
   );
 }

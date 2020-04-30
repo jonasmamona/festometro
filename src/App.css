@@ -9,6 +9,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }
 
 ul {
@@ -184,4 +189,17 @@ h4 {
   100% {
     opacity: 1;
   }
+}
+
+.bulb {
+  position: fixed;
+  z-index: 20;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+}
+
+.bulb-light {
+  fill: white !important;
+  transition: all linear 10.5s;
 }

@@ -1,0 +1,150 @@
+@mixin fullscreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+@mixin delay($base, $number, $step) {
+  animation-delay: #{($number * $step) + $base}s;
+}
+
+@keyframes spin { 
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-30deg);
+  }
+  100% { 
+      transform: rotate(0deg);
+  } 
+}
+
+@mixin position($i) {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  @if $i == 0 {
+    top: 10px;
+    left: 10px;
+  } @else if $i == 1 {
+    bottom: 10px;
+    right: 10px;
+  } @else if $i == 2 {
+    bottom: 10px;
+    left: 10px;
+  } @else if $i == 3 {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@mixin image($n) {
+  @for $i from 0 to $n {
+    :nth-child(#{$i + 1}) {
+      object-fit: contain;
+      animation: fadeInOut 2s ease-in-out both;
+      @include delay(10.5, $i, 3);
+      @include position($i);
+    }
+    :last-child {
+      object-fit: contain;
+      @include fullscreen();
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@mixin gifs($n) {
+  @for $i from 0 to $n {
+    :nth-child(#{$i + 1}) {
+      animation: lightsOut 2s ease-in-out both;
+      z-index: 5;
+      width: 25%;
+      margin-top: $i*10 / 100 * 100%;
+      @include delay(25.5, $i, 4);
+    }
+    :last-child {
+      @include fullscreen();
+      animation-delay: 41.5s;
+      margin-top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@mixin heads($n) {
+  @for $i from 0 to $n {
+    :nth-child(#{$i + 1}) {
+      animation: lightsOut 1s ease-in-out both, spin 1s linear both infinite;
+      @include delay(41.5, $i, 3);
+    }
+  }
+}
+
+@keyframes lightsOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.richard {
+  background-color: black;
+  @include fullscreen();
+  animation: lightsOut 10.5s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .images {
+    @include image(5);
+  }
+
+  .gifs {
+    display: flex;
+    align-items: flex-start;
+    @include gifs(5);
+  }
+
+  .column {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+
+    &.one {
+      left: 30px;
+      @include heads(3);
+    }
+
+    &.two {
+      right: 30px;
+      @include heads(3);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open ProfessorEscroto
+FLG -ppx '/Users/celsobonutti/Documents/Fun/festometro/node_modules/bs-platform/darwin/bsc.exe -as-ppx -bs-jsx 3'
+S /Users/celsobonutti/Documents/Fun/festometro/node_modules/bs-platform/lib/ocaml
+B /Users/celsobonutti/Documents/Fun/festometro/node_modules/bs-platform/lib/ocaml
+FLG -w +a-4-9-40-41-42-50-61-102
+S /Users/celsobonutti/Documents/Fun/festometro/node_modules/re-classnames/lib/ocaml
+B /Users/celsobonutti/Documents/Fun/festometro/node_modules/re-classnames/lib/ocaml
+S /Users/celsobonutti/Documents/Fun/festometro/node_modules/reason-react/lib/ocaml
+B /Users/celsobonutti/Documents/Fun/festometro/node_modules/reason-react/lib/ocaml
+S src/reason
+B lib/bs/src/reason
+S src/reason/page/Richard
+B lib/bs/src/reason/page/Richard
+####BSB GENERATED: NO EDIT}
