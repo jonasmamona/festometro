@@ -23,7 +23,7 @@ function CountingHasStarted(props: ICounterProps) {
         Já temos R$ <span>{props.countedDays + 1}</span> por Confradx em jogo.
       </h2>
       <h2>
-        Isso dá <span>{props.countedDays + 1 * 16}</span> reais pra gastar em
+        Isso dá <span>{(props.countedDays + 1) * 16}</span> reais pra gastar em
         algo pior que ajuda comunitária.
       </h2>
     </div>

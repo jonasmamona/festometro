@@ -1,5 +1,9 @@
 export function datediff(date1: Date, date2: Date) {
-  let result = Math.round((date2.valueOf() - date1.valueOf()) / 86400000);
+  const millisecondsInADay = 86400000;
+  let result = Math.round(
+    (date2.valueOf() - date1.valueOf()) / millisecondsInADay
+  );
+  console.log(result);
 
   if (isNaN(result)) {
     return 0;

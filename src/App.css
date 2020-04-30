@@ -11,6 +11,10 @@ body {
   align-items: center;
 }
 
+ul {
+  list-style: none;
+}
+
 h1 {
   background: linear-gradient(to right, red, yellow, green, blue, purple);
   -webkit-background-clip: text;
@@ -21,6 +25,20 @@ h1 {
 }
 
 h2 {
+  font-size: 1.4rem;
+  color: #333;
+  font-family: "impact";
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #333;
+  font-family: "impact";
+  text-align: center;
+}
+
+h4 {
   font-size: 1.4rem;
   color: #333;
   font-family: "impact";
