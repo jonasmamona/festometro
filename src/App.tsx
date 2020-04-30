@@ -45,10 +45,16 @@ function App() {
     <div>
       <h1>FESTÔMETRO</h1>
       <Confetti />
-      {countedDays && <Counter countedDays={countedDays} />}
-      {countedDays && (
-        <Knapsack products={products} totalMoney={(countedDays + 1) * 16} />
-      )}
+      {countedDays !== null ? <Counter countedDays={countedDays} /> : null}
+      {countedDays !== null && countedDays >= 0 ? (
+        <Knapsack
+          products={products.filter((element) => {
+            console.log(element);
+            return element.price <= (countedDays + 1) * 16;
+          })}
+          totalMoney={(countedDays + 1) * 16}
+        />
+      ) : null}
       <IconBulb
         size={40}
         onClick={toggleLights}

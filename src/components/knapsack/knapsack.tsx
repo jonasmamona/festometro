@@ -15,9 +15,8 @@ export default function Knapsack(props: IKnapsackProps) {
           return (
             <li key={index}>
               <h3>
-                {Math.round(
-                  (props.totalMoney / element.price) * element.multiplier
-                )}
+                {Math.round(props.totalMoney / element.price) *
+                  element.multiplier}
                 {element.suffix}
                 {element.name}
                 {props.products.indexOf(element) === props.products.length - 1

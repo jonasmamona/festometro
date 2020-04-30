@@ -2,19 +2,19 @@ export const products = [
   {
     name: "Picanha",
     price: 51.98,
-    suffix: " quilos de ",
+    suffix: " quilo(s) de ",
     multiplier: 1,
   },
   {
     name: "Porquinha",
     price: 36.9,
-    suffix: " quilos de ",
+    suffix: " quilo(s) de ",
     multiplier: 1,
   },
   {
     name: "Pão de Alho",
     price: 11.98,
-    suffix: " quilos de ",
+    suffix: " quilo(s) de ",
     multiplier: 0.269,
   },
   {
@@ -26,25 +26,25 @@ export const products = [
   {
     name: "Coca-Cola",
     price: 6.89,
-    suffix: " litros de ",
+    suffix: " litro(s) de ",
     multiplier: 2,
   },
   {
     name: "Caracu",
     price: 5.99,
-    suffix: " litros de ",
+    suffix: " litro(s) de ",
     multiplier: 0.355,
   },
   {
     name: "Skol Beats",
     price: 3.19,
-    suffix: " litros de ",
+    suffix: " litro(s) de ",
     multiplier: 0.269,
   },
   {
     name: " Dólar(es)",
     price: 10,
     suffix: "",
-    multiplier: 0.1,
+    multiplier: 0.001,
   },
 ];
